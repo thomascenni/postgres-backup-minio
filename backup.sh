@@ -57,8 +57,8 @@ pg_dump $POSTGRES_HOST_OPTS $POSTGRES_DATABASE > dump.tar
 echo "Creating MinIO alias ..."
 mc alias set minio_alias $MINIO_HOST $MINIO_ACCESSKEY $MINIO_SECRETKEY
 
-echo "Uploading dump to $MINIO_BUCKET ..."
-mc cp dump.tar $ALIAS/$MINIO_BUCKET/${POSTGRES_DATABASE}_$(date +"%Y-%m-%dT%H:%M:%SZ").tar
+echo "Uploading dump.tar to $MINIO_BUCKET ..."
+mc cp dump.tar minio_alias/$MINIO_BUCKET/${POSTGRES_DATABASE}_$(date +"%Y-%m-%dT%H:%M:%SZ").tar
 echo "SQL backup uploaded successfully."
 
 rm dump.tar
