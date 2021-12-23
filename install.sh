@@ -14,7 +14,7 @@ curl -L --insecure https://github.com/odise/go-cron/releases/download/v0.0.7/go-
 chmod u+x /usr/local/bin/go-cron
 
 # install minio client
-wget -O mc https://dl.min.io/client/mc/release/linux-amd64/$MINIO_MC_VERSION
+wget -O mc https://dl.min.io/client/mc/release/linux-amd64/archive/$MINIO_MC_VERSION
 mv mc /usr/local/bin
 chmod u+x /usr/local/bin/mc
 
