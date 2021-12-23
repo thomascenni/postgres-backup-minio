@@ -52,7 +52,7 @@ POSTGRES_HOST_OPTS="-h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -F t"
 
 echo "Creating dump of ${POSTGRES_DATABASE} database from ${POSTGRES_HOST} ..."
 
-pg_dump $POSTGRES_HOST_OPTS $POSTGRES_DATABASE > dump.tar
+pg_dump --no-owner --no-privileges $POSTGRES_HOST_OPTS $POSTGRES_DATABASE > dump.tar
 
 echo "Creating MinIO alias ..."
 mc alias set minio_alias $MINIO_HOST $MINIO_ACCESSKEY $MINIO_SECRETKEY
